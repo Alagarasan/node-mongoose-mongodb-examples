@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 
 import student from './routes/crud_student'
 import score from './routes/crud_scores'
+import lookup from './routes/lookup'
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/api', student)
 app.use('/api', score)
+app.use('/api', lookup)
 
 app.get('/api/test', (req, res) => {
 	res.status(200).json('available')
